@@ -18,8 +18,16 @@ FROM openjdk:17-jdk-alpine
 # Expose the application's port
 EXPOSE 8075
 
+# Set environment variables for the executable paths
+ENV TEMPLATE_COMPILER_PATH=/app/templatefinal2.exe
+ENV SCENARIO_COMPILER_PATH=/app/testFinal.exe
+
 # Copy the jar from the build stage
 COPY --from=build /app/target/testpfe-0.0.1-SNAPSHOT.jar /testpfe-0.0.1.jar
+
+# Copy the executable files into the container
+COPY templatefinal2.exe /app/templatefinal2.exe
+COPY testFinal.exe /app/testFinal.exe
 
 # Entry point for running the application
 ENTRYPOINT ["java", "-jar", "/testpfe-0.0.1.jar"]
