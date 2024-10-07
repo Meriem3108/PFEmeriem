@@ -16,7 +16,7 @@ RUN mvn package -DskipTests
 FROM openjdk:17-jdk-alpine
 
 # Expose the application's port
-EXPOSE 8075
+EXPOSE 80
 
 # Set environment variables for the executable paths
 ENV TEMPLATE_COMPILER_PATH=/app/templatefinal2.exe
