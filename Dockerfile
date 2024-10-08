@@ -15,9 +15,6 @@ RUN mvn package -DskipTests
 # Use the official OpenJDK image for running the app
 FROM openjdk:17-jdk-alpine
 
-# Expose the application's port
-EXPOSE 80
-
 # Set environment variables for the executable paths
 ENV TEMPLATE_COMPILER_PATH=/app/templatefinal2.exe
 ENV SCENARIO_COMPILER_PATH=/app/testFinal.exe
